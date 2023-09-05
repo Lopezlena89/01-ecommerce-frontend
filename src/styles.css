@@ -28,7 +28,7 @@
 }
 
 .titulo {
-    margin:5px;
+    margin:2%;
     font-weight: bolder;
 }
 .registro * input{
@@ -41,12 +41,15 @@
    box-shadow: 0 0 0 2px rgba(41, 50, 60, 0.2);
 }
 
-.registro div:nth-child(4) a{
+.registro div:last-child a{
    display: flex;
    flex-direction: row;
    justify-content: flex-end;
    text-decoration:none;
    font-weight: bolder;
+}
+.login{
+    height: 250px;
 }
 
 
