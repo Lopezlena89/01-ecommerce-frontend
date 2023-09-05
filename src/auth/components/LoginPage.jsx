@@ -1,24 +1,54 @@
-import React from 'react'
+import { Link  } from "react-router-dom";
+import { loginRequest } from "../../../api/auth";
+import { useForm } from "../../../hooks/useForm";
 
 export const LoginPage = () => {
+
+  const {correo,password,onInputChange} = useForm({
+    correo:'',
+    password:''
+  });
+
+  const loginSubmit = async(e) =>{
+    e.preventDefault();
+    const res = await loginRequest({correo,password})
+    console.log(res);
+  }
+
+
   return (
     <>
-      <section className='registro-usuarios'>
+      <section className='usuarios'>
         <div className='container login'>
-          <div className='titulo col-3'>
+         <form onSubmit={loginSubmit}>
+         <div className='titulo col-3'>
            <div> Login</div>
           </div>
-          <div className='registro col-9'>
+          <div className='usuario col-9'>
             <div className="row-4">
-              <input type="text" placeholder='Correo'/>
+              <input 
+                type="email" 
+                placeholder='Correo'
+                name='correo'
+                value={correo}
+                onChange={onInputChange}
+                />
             </div>
             <div className="row-4">
-              <input type="text" placeholder='Password'/>
+              <input 
+              type="password" 
+              placeholder='Password'
+              name='password'
+                value={password}
+                onChange={onInputChange}
+              />
             </div>
             <div className="row-4">
-              <a href="">Registro</a>
+              <button className="btn btn-primary">Sign-in</button>
+              <Link  to="/register">Register</Link>
             </div>
           </div>
+         </form>
         </div>
       </section>
     </>

@@ -6,7 +6,7 @@
     background: linear-gradient(0deg, rgba(1,131,199,1) 0%, rgba(0,201,242,1) 100%, rgba(9,9,121,1) 100%);
 
 }
-.registro-usuarios{
+.usuarios{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -23,7 +23,7 @@
     background-color: #55CBFF;
     border-radius: 10%;
     width: 400px;
-    height: 300px;
+    height: 350px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -31,25 +31,30 @@
     margin:2%;
     font-weight: bolder;
 }
-.registro * input{
+.usuario * input{
    border:0;
    border-radius: 5px;
   
 }
-.registro * input:focus{
+.usuario * input:focus{
    outline:0px;
    box-shadow: 0 0 0 2px rgba(41, 50, 60, 0.2);
 }
 
-.registro div:last-child a{
+.usuario div:last-child {
    display: flex;
-   flex-direction: row;
-   justify-content: flex-end;
+   flex-direction: column;
    text-decoration:none;
    font-weight: bolder;
 }
+.usuario div:last-child a{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .login{
-    height: 250px;
+    height: 300px;
 }
 
 
