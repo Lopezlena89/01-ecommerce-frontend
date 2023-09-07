@@ -1,14 +1,21 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { LoginPage } from '../auth/components/LoginPage'
-import { RegisterPage } from '../auth/components/registerPage'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { HomePage,LoginPage,RegisterPage} from '../auth/components'
+import {Entregas,Envios,Tienda,Tuzona,Vende} from '../auth/navegador'
 
 export const AppRouter = () => {
   return (
     <Routes>
-        <Route path='/' element={<h1>Home Page</h1>}/>
+        <Route path='/' element={<HomePage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<RegisterPage/>}/>
+        <Route path='/entregas' element={<Entregas/>}/>
+        <Route path='/envios' element={<Envios/>}/>
+        <Route path='/tienda' element={<Tienda/>}/>
+        <Route path='/tuzona' element={<Tuzona/>}/>
+        <Route path='/vende' element={<Vende/>}/>
+        <Route path='/*' element={<Navigate to="/login"/>}/>
+        
     </Routes>
   )
 }
