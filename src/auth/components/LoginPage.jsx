@@ -10,10 +10,8 @@ export const LoginPage = () => {
     correo:'',
     password:''
   });
-  console.log('render-login')
+
   const {login} = useContext(AuthContext);
-
-
 
   const loginSubmit = async(e) =>{
     e.preventDefault();

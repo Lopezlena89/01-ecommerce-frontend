@@ -1,11 +1,10 @@
+
 import { Navigate, Route, Routes } from "react-router-dom"
 import { HomePage,Entregas,Envios,Tienda,Tuzona,Vende, Navbar  } from "../components"
 
-
-
-
-
 export const MainRouter = () => {
+
+
   return (
     
        <>
@@ -18,6 +17,7 @@ export const MainRouter = () => {
             <Route path='tuzona' element={<Tuzona/>}/>
             <Route path='vende' element={<Vende/>}/>
             <Route path="/" element={<Navigate to="../main/home" />} />
+            
             
           </Routes>
        </>
