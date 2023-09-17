@@ -1,6 +1,8 @@
-import { Link  } from "react-router-dom";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { loginRequest } from "../../../api/auth";
 import { useForm } from "../../../hooks/useForm";
+import { AuthContext } from "../context/AuthContext";
 
 export const LoginPage = () => {
 
@@ -8,11 +10,17 @@ export const LoginPage = () => {
     correo:'',
     password:''
   });
+  console.log('render-login')
+  const {login} = useContext(AuthContext);
+
+
 
   const loginSubmit = async(e) =>{
     e.preventDefault();
     const res = await loginRequest({correo,password})
-    console.log(res);
+    console.log(res.data.usuario);
+    login(res.data.usuario)
+  
   }
 
 
@@ -44,7 +52,7 @@ export const LoginPage = () => {
               />
             </div>
             <div className="row-4">
-              <button className="btn btn-primary">Sign-in</button>
+              <button className="btn btn-primary">Login</button>
               <Link  to="/register">Register</Link>
             </div>
           </div>

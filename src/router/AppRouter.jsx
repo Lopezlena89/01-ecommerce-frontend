@@ -1,20 +1,34 @@
-import React from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { HomePage,LoginPage,RegisterPage} from '../auth/components'
-import {Entregas,Envios,Tienda,Tuzona,Vende} from '../auth/navegador'
+
+import { useContext } from 'react';
+import {Route, Routes } from 'react-router-dom';
+import { AuthContext } from '../auth/context/AuthContext';
+import {PublicRouter,PrivateRouter,AuthRouter,MainRouter} from './';
+
+
+
+
 
 export const AppRouter = () => {
+
+  const {user} = useContext(AuthContext);
+
   return (
     <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/register' element={<RegisterPage/>}/>
-        <Route path='/entregas' element={<Entregas/>}/>
-        <Route path='/envios' element={<Envios/>}/>
-        <Route path='/tienda' element={<Tienda/>}/>
-        <Route path='/tuzona' element={<Tuzona/>}/>
-        <Route path='/vende' element={<Vende/>}/>
-        <Route path='/*' element={<Navigate to="/login"/>}/>
+        
+          <Route path='auth/*' element={
+            <PublicRouter>
+                <AuthRouter/>
+            </PublicRouter>
+          
+          }/>
+
+          <Route path={`main/*`} element={
+            <PrivateRouter>
+              <MainRouter/> 
+            </PrivateRouter>
+          }/>
+        
+
         
     </Routes>
   )

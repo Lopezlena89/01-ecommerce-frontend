@@ -1,6 +1,8 @@
 import { Link  } from "react-router-dom";
 import { useForm } from "../../../hooks/useForm";
 import {registerRequest} from '../../../api/auth';
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export const RegisterPage = () => {
 
@@ -10,10 +12,13 @@ export const RegisterPage = () => {
     password:''
   });
 
+  const {register} = useContext(AuthContext);
+
   const registerSubmit = async(e) =>{
     e.preventDefault();
     const res = await registerRequest({nombre,correo,password})
-    console.log(res);
+    console.log(res.data.usuario);
+    register(res.data.usuario)
   }
 
 

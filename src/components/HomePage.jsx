@@ -3,18 +3,10 @@ import { Link, NavLink  } from "react-router-dom";
 
 
 export const HomePage = () => {
+    console.log('render-home')
   return (
    <>
     <div className="home-page"  >
-        <nav className="navegador-home" >
-            <img className="imagen-nav" src="" alt="" />
-            <NavLink to="/entregas" >entregas</NavLink>
-            <NavLink to="/envios">envios</NavLink>
-            <NavLink to="/tienda">tienda</NavLink>
-            <NavLink to="/tuzona">tuzona</NavLink>
-            <NavLink to="/vende">vende</NavLink>
-            <img className="imagen-nav" src="" alt="" />
-        </nav>
         <main className="contenedor-home">
             <section className="inicio-home">
                 <img className="imagen-inicio" src="../../imagenes/balance-110850_1280.jpg" alt="" />

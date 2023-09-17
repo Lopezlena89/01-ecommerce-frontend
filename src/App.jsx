@@ -1,15 +1,14 @@
 import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import { LoginPage } from './auth/components/LoginPage'
-import { RegisterPage } from './auth/components/registerPage'
+import { AuthProvider } from './auth/context/AuthProvider'
+
 import { AppRouter } from './router/AppRouter'
 
 export const App = () => {
   return (
     <>
-        <BrowserRouter>
+        <AuthProvider>
           <AppRouter/>
-        </BrowserRouter>
+        </AuthProvider>
     </>
   )
 }

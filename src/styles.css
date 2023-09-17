@@ -1,3 +1,6 @@
+body{
+    background-color: white;
+}
 .usuarios{
     margin:0;
     padding:0;
@@ -96,7 +99,7 @@
 .imagen-inicio{
     width: 200px;
     height: 200px;
-    border-radius: 100%;
+    border-radius: 100%; 
     background-color: black;
 }
 .carousel-1{
