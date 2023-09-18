@@ -51,7 +51,7 @@ export const LoginPage = () => {
             </div>
             <div className="row-4">
               <button className="btn btn-primary">Login</button>
-              <Link  to="/register">Register</Link>
+              <Link  to="../register">Register</Link>
             </div>
           </div>
          </form>

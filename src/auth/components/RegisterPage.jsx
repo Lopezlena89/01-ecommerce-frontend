@@ -60,7 +60,7 @@ export const RegisterPage = () => {
               </div>
               <div className="row-3">
                 <button className="btn btn-primary">Enviar</button>
-                <Link  to="/login">Login</Link>
+                <Link  to="../login">Login</Link>
               </div>
             </div>
           </div>
