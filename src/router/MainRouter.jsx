@@ -1,12 +1,12 @@
 
 import { Navigate, Route, Routes } from "react-router-dom"
-import { HomePage,Entregas,Envios,Tienda,Tuzona,Vende, Navbar  } from "../components"
+import { HomePage,Entregas,Envios,Tienda,Tuzona,Vende  } from "../components"
+import { Navbar } from "../components/Layout/Navbar"
 
 export const MainRouter = () => {
 
 
   return (
-    
        <>
           <Navbar/>
           <Routes>

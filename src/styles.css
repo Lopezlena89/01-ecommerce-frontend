@@ -82,21 +82,17 @@ body{
     justify-content: space-evenly;
     align-items: center;
 }
-.navegador-home .inside-nav *:nth-child(8){
+.inside-nav button{
     color:black;
 }
-.navegador-home .inside-nav img{
-    background-color: black;
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
+.inside-nav strong{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .navegador-home .inside-nav a{
     color:black;
     text-decoration: none;
     font-size: 11px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
 }
 /*Navegador resposive*/
 .navegador-home .sidebar{
@@ -133,14 +129,15 @@ body{
 /*Contenedor home*/
 .inicio-home{
     color:white;
-    background: rgb(1,131,199);
-    background: linear-gradient(0deg, rgba(1,131,199,1) 0%, rgba(0,201,242,1) 100%, rgba(9,9,121,1) 100%);
+    background: rgb(255,254,254);
+    background: linear-gradient(180deg, rgba(255,254,254,1) 0%, rgba(233,244,255,1) 100%);  
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.inicio-home .imagen-inicio{
+.imagen-inicio{
     margin-top: 100px;
 }
 .inicio-home div{
@@ -162,7 +159,7 @@ body{
 .search-bar input{
     width: 80%;
     outline:none;
-    border: 1px solid rgba(120, 120, 120, 0.133);
+    border: 1px solid rgba(120, 120, 120, 1);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-right: 0;
@@ -171,7 +168,7 @@ body{
 .search-bar button{
    cursor: pointer;
    width: 20%;
-   border: 1px solid rgba(120, 120, 120, 0.133);
+   border: 1px solid rgba(120, 120, 120, 1);
    border-top-right-radius:10px ;
    border-bottom-right-radius: 10px;
 }
@@ -201,12 +198,15 @@ body{
     flex-direction: column;
     align-items: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
 }
 .ventas div *{
     margin-top: 20px;
 }
-.ventas div h2{
+.ventas .ventas-1 a,.ventas .ventas-2 a{
     color:black;
+    text-decoration: none;
+    font-weight: bolder;
 }
 .ventas div p{
     
@@ -219,6 +219,94 @@ body{
     
 }
 
+/* footer */
+footer{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    background: rgb(43, 42, 42);
+    color:rgb(219, 217, 217);
+}
+.first-element{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.first-element .one,.first-element .two,.first-element .three{
+    width: 33.3%;
+    height: 200px;
+}
+.one{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.one *{
+    margin-top: 20px;
+    margin-left: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.one *:nth-child(1){
+    font-size: x-large;
+}
+.two{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.two div{
+    margin-bottom: 20px;   
+}
+
+.two form{
+    width: 100%;
+   
+}
+.two form input{
+    border: 1px solid white;
+    margin-right: 10px;
+    border-radius: 2px;
+    background: none;
+    color:white;
+    outline: none;
+}
+.two form button{
+    border: none;
+    border-radius: 4px;
+    background: rgb(233, 123, 123);
+    color:white
+}
+.three{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.three .follow{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.follow span,.call span{
+    margin-bottom: 10px;
+}
+.follow div svg{
+    margin-left: 10px; 
+}
+.follow div svg:nth-child(1){
+    margin: 0;
+}
+.three .call{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+
 @media screen and (max-width: 768px) {
    
     .hideOnMovile{
@@ -229,15 +317,45 @@ body{
     }
     .logout{
         width: 50%;
-        
     }
     .search-bar input{
         width: 100%;
         border-radius: 10px;
+        
     }
     .boton {
         visibility: hidden;
     }
+    footer{
+        height: 90vh;
+    }
+    .first-element .one,.first-element .two,.first-element .three{
+        width: 100%;
+    }
+    .first-element{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .one{
+        text-align: center;
+    }
+    .two{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .follow,.call{
+        width: 50%;
+    }
+    .follow div svg:nth-child(1){
+        margin: 10px;
+    }
+    .three{
+        text-align: center;
+    }
+   
+    
      
 }
 

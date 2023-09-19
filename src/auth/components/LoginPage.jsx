@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginRequest } from "../../../api/auth";
 import { useForm } from "../../../hooks/useForm";
 import { AuthContext } from "../context/AuthContext";
@@ -12,12 +12,17 @@ export const LoginPage = () => {
   });
 
   const {login} = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const loginSubmit = async(e) =>{
     e.preventDefault();
+    const lastPath = localStorage.getItem('lastPath') || '/';
     const res = await loginRequest({correo,password})
     console.log(res.data.usuario);
-    login(res.data.usuario)
+    login(res.data.usuario);
+    navigate(lastPath,{
+      replace:true
+    });
   
   }
 

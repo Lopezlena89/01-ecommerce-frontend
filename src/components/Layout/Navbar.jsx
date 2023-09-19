@@ -1,7 +1,8 @@
 
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom'
-import { AuthContext } from '../auth/context/AuthContext';
+import { AuthContext } from '../../auth/context/AuthContext';
+
 
 export const Navbar = () => {
 
@@ -9,22 +10,25 @@ export const Navbar = () => {
   const showSidebar = () =>{
     const sidebar = document.querySelector('.sidebar');
     sidebar.style.display = 'flex';
+   
   }
   const hideSidebar = () =>{
     const sidebar = document.querySelector('.sidebar');
     sidebar.style.display = 'none';
   }
 
-  const {logout} = useContext(AuthContext);
+  const {logout,user} = useContext(AuthContext);
  
   const logOut = () =>{
     logout();
+    
   }
 
   return (
     <nav className="navegador-home" >
         <div className='sidebar'>
-          <NavLink onClick={hideSidebar} to="../main/home" ><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></NavLink>
+          <span onClick={hideSidebar}><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></span>
+          <NavLink to="../main/home" >Home</NavLink>
           <NavLink to="../main/entregas" >entregas</NavLink>
           <NavLink to="../main/envios">envios</NavLink>
           <NavLink to="../main/tienda">tienda</NavLink>
@@ -41,7 +45,7 @@ export const Navbar = () => {
           <NavLink className='hideOnMovile' to="../main/tienda">tienda</NavLink>
           <NavLink className='hideOnMovile' to="../main/tuzona">tuzona</NavLink>
           <NavLink className='hideOnMovile' to="../main/vende">vende</NavLink>
-          <img className="imagen-nav"/>
+          <strong>{user.nombre}</strong>
           <button className='btn btn-outline-secondary hideOnMovile' onClick={logOut}>
             Logout
           </button>

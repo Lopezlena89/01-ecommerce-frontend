@@ -4,7 +4,7 @@ import { Navigate } from 'react-router-dom';
 import { AuthContext } from '../auth/context/AuthContext'
 
 export const PublicRouter = ({children}) => {
- 
+  console.log('Public Router')
   const {logged} = useContext(AuthContext);
   return (!logged)
   ?  children
